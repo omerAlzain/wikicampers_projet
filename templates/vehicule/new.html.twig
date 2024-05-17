@@ -1,0 +1,10 @@
+{# templates/vehicule/new.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block title %}Créer un nouveau véhicule{% endblock %}
+
+{% block body %}
+
+    {{ include('vehicule/form.html.twig', {'form': form}) }}
+
+{% endblock %}

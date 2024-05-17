@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Vehicule{% endblock %}
+
+{% block body %}
+<h1>{{ vehicule.marque }} {{ vehicule.modele }}</h1>
+
+{% if isAvailable %}
+    {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <button class="btn">{{ 'Réserver' }}</button>
+    {{ form_end(form) }}
+{% else %}
+    <p>Ce véhicule est actuellement non disponible.</p>
+{% endif %}
+
+<a href="{{ path('vehicule_index') }}">Retour à la liste</a>
+{% endblock %}

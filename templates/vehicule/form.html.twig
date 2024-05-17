@@ -1,0 +1,15 @@
+{# templates/vehicule/form.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ form.vars.value.id ? 'Modifier le véhicule' : 'Créer un nouveau véhicule' }}{% endblock %}
+
+{% block body %}
+    <h1>{{ form.vars.value.id ? 'Modifier le véhicule' : 'Créer un nouveau véhicule' }}</h1>
+
+    {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <button>{{ form.vars.value.id ? 'Mettre à jour' : 'Créer' }}</button>
+    {{ form_end(form) }}
+
+    <a href="{{ path('vehicule_index') }}">Retour à la liste</a>
+{% endblock %}
